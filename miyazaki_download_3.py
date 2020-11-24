@@ -6,9 +6,9 @@ from imutils import paths
 
 url_path = open('download.csv').read().strip().split('\n')
 total = 0
-if not os.path.exists('images'):
-    os.mkdir('images')
-image_path = 'images'
+if not os.path.exists('miyazaki_images'):
+    os.mkdir('miyazaki_images')
+image_path = 'miyazaki_images'
 for url in url_path:
     try:
         req = requests.get(url, timeout=60)

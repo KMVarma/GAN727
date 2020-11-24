@@ -15,7 +15,7 @@ import random
 
 # adding path to geckodriver to the OS environment variable
 os.environ["PATH"] += os.pathsep + os.getcwd()
-download_path = "./data/miyazaki/" # where to download images.
+download_path = "./data/miyazaki/" # where to download miyazaki_images.
 
 
 def randdelay(a,b):
@@ -26,7 +26,7 @@ def main():
     searchtext = "miyazaki wallpaper"
     num_requested = int(5000)
     number_of_scrolls = num_requested / 400 + 1
-    # number_of_scrolls * 400 images will be opened in the browser
+    # number_of_scrolls * 400 miyazaki_images will be opened in the browser
 
     if not os.path.exists(download_path + searchtext.replace(" ", "_")):
         os.makedirs(download_path + searchtext.replace(" ", "_"))
@@ -49,22 +49,22 @@ def main():
 
     for _ in xrange(number_of_scrolls):
         for __ in xrange(10):
-            # multiple scrolls needed to show all 400 images
+            # multiple scrolls needed to show all 400 miyazaki_images
             driver.execute_script("window.scrollBy(0, 1000000)")
             randdelay(1, 3)
             #time.sleep(20)
-        # to load next 400 images
+        # to load next 400 miyazaki_images
         randdelay(1, 3)
         #time.sleep(60)
         try:
             driver.find_element_by_xpath("//input[@id='smb']").click()
         except Exception as e:
-            print("Less images found:", e)
+            print("Less miyazaki_images found:", e)
             break
 
     # imges = driver.find_elements_by_xpath('//div[@class="rg_meta"]') # not working anymore
     imges = driver.find_elements_by_xpath('//div[contains(@class,"rg_meta")]')
-    print("Total images:", len(imges), "\n")
+    print("Total miyazaki_images:", len(imges), "\n")
     for img in imges:
         img_count += 1
         img_url = json.loads(img.get_attribute('innerHTML'))["ou"]

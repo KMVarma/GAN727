@@ -10,12 +10,12 @@ search_queries = ['The pop up selfie camera is placed aligning with the rear cam
 def downloadimages(query):
     # keywords is the search query
     # format is the image file format
-    # limit is the number of images to be downloaded
+    # limit is the number of miyazaki_images to be downloaded
     # print urs is to print the image file url
     # size is the image size which can
     # be specified manually ("large, medium, icon")
     # aspect ratio denotes the height width ratio
-    # of images to download. ("tall, square, wide, panoramic")
+    # of miyazaki_images to download. ("tall, square, wide, panoramic")
     arguments = {"keywords": query,
                  "format": "jpg",
                  "limit": 2,
